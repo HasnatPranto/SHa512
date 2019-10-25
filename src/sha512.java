@@ -29,15 +29,19 @@ public class sha512 {
 
         while(len%128!=0)
             len++;
+        
         byte[] b = new byte[len];
 
         for(int i=0;i<bits.length;i++)
             b[i]=bits[i];
+        
         b[bits.length]=(byte) 128;
+        
         byte[] blen=BigInteger.valueOf(bits.length*8).toByteArray();
 
         for(int i=b.length-blen.length,j=0;j<blen.length;i++,j++)
             b[i]=blen[j];
+        
         return b;
     }
 
