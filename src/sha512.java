@@ -35,7 +35,7 @@ public class sha512 {
         for(int i=0;i<bits.length;i++)
             b[i]=bits[i];
         
-        b[bits.length]=(byte) 128;
+        b[bits.length]=(byte) 128;      /*This line is a beauty*-*/
         
         byte[] blen=BigInteger.valueOf(bits.length*8).toByteArray();
 
